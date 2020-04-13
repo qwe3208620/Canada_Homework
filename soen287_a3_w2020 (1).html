@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>SOEN287 Web Programming - Assignment 3</title>
+    <style>
+        table, td, th {
+            border-width: medium;
+            border-style: groove;
+            border-color: black;
+            border-collapse: collapse;
+        }
+        .title {
+            text-align: center;
+        }
+        .important {
+            background-color: yellow;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<div class="title"><h1>SOEN287 Web Programming</h1>
+    <h2>Assignment 3: Building a Web Site</h2>
+    <h3>Winter 2020</h3>
+    <h4>Due date: April 16, 2020, <span class="important">before 9 AM</span></h4></div>
+<hr/>
+
+<h2>Overview</h2>
+<p>In this assignment, you have to continue developping your Flask application you created in
+    your previous assignments.</p>
+<hr/>
+
+<h2>Details</h2>
+<ol>
+    <li>All your forms should be defined as subclasses of <code>FlaskForm</code>, and should have properly defined
+        validators. Your forms should be handled properly, by defining a route accepting GET and POST methods, and
+        you should use the POST/REDIRECT/GET pattern when the form data validates (as shown in class).
+    </li>
+    <li>Your web site data should be stored in files, located in the
+        <code>data</code> subfolder.  The data should in CSV or JSON formats. 
+        Alternatively, you can store your data in an SQLite DB, also stored in the
+        <code>data</code> subfolder, or in some other DB. Storing data in a database is optional.
+    </li>
+    <li>Your web site should contain:
+        <ol>
+            <li>At least 2 forms, with at least one of these forms which must be significantly different from the ones
+                included in the examples covered in class and in the tutorials.
+            </li>
+            <li>At least 1 table and at least 1 list created dynamically from data stored in a
+                local file or a local SQLite DB (or some other DB). These pages can be, or not, directly connected
+                to your forms.
+            </li>
+            <li>A way to support user logins. Note that logging in can be limited to administrators, thus there's no
+                need to have a registration page (but you can have a registration page if you wish). Make sure you
+                provide a valid username/password pair to allow using
+                your web site if you don't have a registration page and/or if some features are limited to already
+                created users (such as admins). Some pages should be protected and viewable by only the logged in
+                users. There should be a way, in each page, to figure out if a user is logged in or not. You could
+                have a special <code>div</code> in your base template that displays whether a user is logged in or not.
+            </li>
+            <li>At least 3 of the following features:
+                <ol>
+                    <li>JavaScript input or form validation, using regular expressions where appropriate, on at least 2
+                        forms.
+                    </li>
+                    <li>JavaScript Ajax call(s) to dynamically load data from the server, and the server code to
+                        support it.
+                    </li>
+                    <li>Using a database instead of local files to store data.</li>
+                    <li>A <em>Forgot password</em> page to help reset a user's <strong>lost</strong> password.</li>
+                    <li>A search page (or possibly a <code>div</code> in a block shared among your templates) to search
+                        for something interesting on your site (for example, search for some blog posts).
+                    </li>
+                    <li>Some other advanced feature, going beyond the basic examples presented in class and in the
+                        tutorials, including, but not limited to
+                        <ol>
+                        	<li>More advanced user interface (more professional design, with animations, ... , using external JS libraries or other tricks)</li>
+                        	<li>A RESTful API for your web site</li>
+                        	<li>Using external APIs to connect to other web sites (like using the Facebook API for example)</li>
+                        	<li>The ability to send emails from your web site</li>
+                        	<li>More advanced session mangement (tracking, user statistics, ...)</li>
+                        	<li>Role-based access control or other more adbvanced user permissions management</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+</ol>
+<hr/>
+
+<h2>Submission</h2>
+<p>Zip your project folder and submit it on Moodle before the due date and time. Make sure your zip file does
+    <strong>NOT</strong> contain any Python virtual environment. Points will be deducted if your submission includes
+    Python virtual environments. Name your file following this regular expression:
+    <code class="important">/^SOEN287_A3_\d{8}_[A-Za-z]+\.zip$/</code>. The file name should include your student ID and your name.</p>
+<hr/>
+
+<h2>Grading</h2>
+<h3>Total: 15 Points</h3>
+<table>
+    <caption>Grading Scheme</caption>
+    <thead>
+    <tr>
+        <th>Grading Criteria</th>
+        <th>Description</th>
+        <th>Points</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Demo</td>
+        <td>You will have to demo your web site to a TA. You will have to give an
+            overview of your web site, go through the different pages, demo the features (log in, submit forms,
+            additional features, etc...). You will also have to answer at least one question from the TA. Your answer(s) will
+            be graded. Your demo, not counting the time for questions and answers, should take no more than 5
+            minutes.
+        </td>
+        <td>8 points</td>
+    </tr>
+    <tr>
+        <td>Source Code</td>
+        <td>Code quality (running code, no bugs, documented code, code organization, ...). Good use of template
+            inheritance and other Flask packages (WTForms, csv, ...). Project folder organization (subfolders, file
+            naming, ...). All features implemented properly.
+        </td>
+        <td>7 points</td>
+    </tr>
+
+    </tbody>
+</table>
+<hr/>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title> {% block title %}A2 web site {% endblock %} </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            padding-top: 60px;
+        }
+
+
+    </style>
+
+    {% endblock %}
+</head>
+
+
+<body>
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="/index">Travel in China</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item font-weight-bolder">
+        <a class="nav-link" href="/Cities">Cities</a>
+      </li>
+      <li class="nav-item font-weight-bolder">
+        <a class="nav-link" href="/History">History</a>
+      </li>
+      <li class="nav-item font-weight-bolder">
+        <a class="nav-link" href="/Food">Food</a>
+      </li>
+         <li class="nav-item font-weight-bolder">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+    </ul>
+       <ul class="navbar-nav ml-auto">
+                 {%if not session.get('username')%}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                {%else%}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                {%endif%}
+                <li class="nav-item active">
+                  <a class="nav-link" href="/register">Register</a>
+              </li>
+            </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<br>
+<div style="text-align:center">
+<img src="https://previews.123rf.com/images/moloko88/moloko881612/moloko88161200003/69075207-map-of-china-and-travel-icons-china-travel-map-vector-illustration-.jpg" width="1200" height="800">
+</div>
+
+<main>
+    <div class="container story">
+        <h3 class="text-secondary">Geography</h3>
+        <p class="text-secondary">
+            China is located in eastern Asia along the western shore of the Pacific Ocean. It spreads over a vastly diverse geographical area of 9.6 million square kilometers (about the size of the USA or Europe), and is home to approaching 1.4 billion people (more than N. America and Europe combined).
+
+            <br/>
+
+            The highlands and hill regions account for 65 percent of the country's total landmass, and there are more than 2,000 lakes dotting the landscape. The highest mountain peak is Qomolangma (Mt. Everest) in Tibet, the highest in the world, 8,848 meters above sea level.
+
+Among the 220,000 kilometers of rivers the Changjiang (Yangtze), Huanghe (Yellow River) and Zhujiang (Pearl River) are the most famous. The Yellow River Basin is the cradle of Chinese civilization, as the many cultural-historical sites along its banks can attest.
+        </p>
+    </div>
+</main>
+
+{% endblock %}
+
+
+</body>
+</html>

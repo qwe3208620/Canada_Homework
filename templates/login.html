@@ -1,0 +1,51 @@
+{% extends "Base.html" %}
+{%block head_title%}login  {%endblock%}
+
+{%block content%}
+
+    <div class="jumbotron">
+        <form action="/login" method="POST" id="form1">
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" placeholder="username" name="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" placeholder="password" name="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" onclick="login()">login</button>
+            </div>
+
+        </form>
+    </div>
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        function login() {
+            $.ajax({
+            //几个参数需要注意一下
+                type: "POST",//方法类型
+                dataType: "json",//预期服务器返回的数据类型
+                url: "login" ,//url
+                data: $('#form1').serialize(),
+                success: function (result) {
+                if(result['code']==200){
+                     window.location.href="index";
+                     {#alert(result['msg']);#}
+                 }else{
+                     window.location.href="login";
+                     alert(result['msg']);
+                 }
+                },
+                error : function() {
+                    alert("异常！");
+                }
+
+
+
+            });
+        }
+    </script>
+{%endblock%}
